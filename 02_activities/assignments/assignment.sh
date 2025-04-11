@@ -31,8 +31,7 @@ mv ./rawdata ./data/raw
 ls ./data/raw
 
 # 4. In ./data/processed, create the following directories: server_logs, user_logs, and event_logs
-mkdir ./data/processed/server_logs ./data/processed/user_logs ./data/processed/event_logs
-
+mkdir -p ./data/processed/server_logs ./data/processed/user_logs ./data/processed/event_logs
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
 cp ./data/raw/*server*.log ./data/processed/server_logs/
 
@@ -50,7 +49,7 @@ rm ./data/processed/user_logs/*ipaddr*
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
 
 touch ./data/inventory.txt
-find ./data/processed -type f > ./data/inventory.txt
+ find ./data/processed -type f > ./data/inventory.txt
 ###########################################
 
 echo "Project setup is complete!"
